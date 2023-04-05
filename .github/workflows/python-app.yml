@@ -12,6 +12,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      ENVIRONMENT: github_actions
     strategy:
       matrix:
         python-version: ["3.9", ">= 3.11"]

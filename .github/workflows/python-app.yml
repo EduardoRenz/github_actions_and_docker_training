@@ -32,4 +32,5 @@ jobs:
           python main_test.py
   docker:
     needs: build
-    uses: /.github/workflows/Docker.yml
+    uses: ./github/workflows/Docker.yml
+    secrets: inherit

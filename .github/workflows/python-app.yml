@@ -31,9 +31,8 @@ jobs:
         run: |
           python main_test.py
   docker:
+    needs: build
     steps:
       - uses: actions/checkout@v3 # Necessary to access local action
       - name: Docker build
-        needs: build
         uses: ./github/workflows/Docker.yml
-        secrets: inherit

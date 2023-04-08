@@ -31,3 +31,4 @@ jobs:
             export DBNAME=${{ secrets.DBNAME }}
             export DBPORT=${{ secrets.DB_PORT }}
             export PORT=5000
+            chmod +x app.py

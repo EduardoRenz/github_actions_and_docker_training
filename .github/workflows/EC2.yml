@@ -32,4 +32,4 @@ jobs:
             export DBPORT=${{ secrets.DB_PORT }}
             export PORT=5000
             chmod +x app.py
-            nohup python3 -m flask run > nohup.out 2> nohup.err < /dev/null &
+            nohup python3 -m flask run > api.log 2>&1 &

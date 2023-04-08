@@ -1,6 +1,6 @@
 FROM python:latest
 
-EXPOSE 8000
+EXPOSE 5000
 
 WORKDIR /app
 
@@ -14,4 +14,4 @@ RUN apt-get -y install python3-pip
 
 RUN pip install -r requirements.txt
 
-CMD [ "python main.py" ]
+CMD [ "python3 -m flask run" ]

@@ -1,5 +1,5 @@
 import unittest
-from main import currency_format
+from app import currency_format
 
 class TestStringMethods(unittest.TestCase):
 

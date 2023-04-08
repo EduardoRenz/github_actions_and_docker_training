@@ -1,9 +1,7 @@
 import re
 import os
 from dotenv import load_dotenv
-
 load_dotenv('.env')
-
 
 environment = os.getenv('ENVIRONMENT')
 print(f"running on {environment}")
@@ -14,6 +12,3 @@ def currency_format(value):
     new_format = float(new_format) / 100 if not is_int else int(new_format)
     return "R$ {:.2f}".format(new_format).replace('.',',')
 
-
-
-print(currency_format('10.45'))

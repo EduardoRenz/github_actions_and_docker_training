@@ -24,3 +24,13 @@ jobs:
           task-definition: task-definition.json
           container-name: Python
           image: eduardorenz/python_ci:master
+          environment-variables: |
+            environment='deploy-ECS-github-actions'
+
+      - name: Deploy Amazon ECS task definition
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          service: API_service_Python
+          cluster: API-Python
+          wait-for-service-stability: true

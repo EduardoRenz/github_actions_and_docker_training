@@ -23,7 +23,7 @@ jobs:
         with:
           task-definition: task-definition.json
           container-name: Python
-          image: eduardorenz/python_ci:master
+          image: eduardorenz/python_ci:${{github.run_number}}
           environment-variables: |
             environment='deploy-ECS-github-actions'
 

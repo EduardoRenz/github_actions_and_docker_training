@@ -16,4 +16,4 @@ RUN pip install -r requirements.txt
 
 RUN chmod +x app.py
 
-CMD [ "python3 -m flask run" ]
+CMD [ "python3", "-m", "flask", "run" ]"

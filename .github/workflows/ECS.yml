@@ -40,4 +40,13 @@ jobs:
 
       - name: Request
         continue-on-error: true
-        run: sleep 30s ; wget http://api-pyhon-lb-848475379.us-east-2.elb.amazonaws.com:5000/
+        run: echo "REQUEST=0" >> $GITHUB_ENV ; sleep 30s ; wget http://api-pyhon-lb-848475379.us-east-2.elb.amazonaws.com:5000/ || echo "REQUEST=1" >> $GITHUB_ENV
+
+      - name: RollBack old dask
+        if: ${{ env.REQUEST != 0 }}
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: task-definition.json.old
+          service: Servico_API-Go
+          cluster: API-Go
+          wait-for-service-stability: true

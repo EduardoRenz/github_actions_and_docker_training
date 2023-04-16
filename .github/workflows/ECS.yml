@@ -37,3 +37,7 @@ jobs:
           service: API_service_Python
           cluster: API-Python
           wait-for-service-stability: true
+
+      - name: Request
+        continue-on-error: true
+        run: sleep 30s ; wget http://api-pyhon-lb-848475379.us-east-2.elb.amazonaws.com:5000/

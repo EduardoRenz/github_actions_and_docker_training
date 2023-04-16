@@ -42,7 +42,7 @@ jobs:
         continue-on-error: true
         run: echo "REQUEST=0" >> $GITHUB_ENV ; sleep 30s ; wget http://api-pyhon-lb-848475379.us-east-2.elb.amazonaws.com:5000/ || echo "REQUEST=1" >> $GITHUB_ENV
 
-      - name: RollBack old dask
+      - name: RollBack old task if error
         if: ${{ env.REQUEST != 0 }}
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:

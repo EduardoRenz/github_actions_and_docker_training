@@ -15,4 +15,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
 
-      - run git clone: https://github.com/leollo98/Infra_CI_Kubernetes.git
+      - run git clone: https://github.com/EduardoRenz/Infra_CI_Kubernetes

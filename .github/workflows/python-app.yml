@@ -40,13 +40,17 @@ jobs:
   #   uses: ./.github/workflows/EC2.yml
   #   secrets: inherit
 
-  deploy_ECS:
-    needs: docker
-    uses: ./.github/workflows/ECS.yml
-    secrets: inherit
+  # deploy_ECS:
+  #   needs: docker
+  #   uses: ./.github/workflows/ECS.yml
+  #   secrets: inherit
 
-  loadtest:
+  # loadtest:
+  #   needs: docker
+  #   if: ${{ github.ref_name == 'dev' }}
+  #   uses: ./.github/workflows/LoadTest.yml
+  #   secrets: inherit
+  Deploy_EKS:
     needs: docker
-    if: ${{ github.ref_name == 'dev' }}
-    uses: ./.github/workflows/LoadTest.yml
+    uses: ./.github/workflows/EKS.yml
     secrets: inherit

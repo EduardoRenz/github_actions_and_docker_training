@@ -22,3 +22,6 @@ jobs:
 
       - run: terraform -chdir=Infra_CI_Kubernetes/env/Homolog init
       - run: terraform -chdir=Infra_CI_Kubernetes/env/Homolog apply -auto-approve
+
+      - name: Kubectl tool installer
+        uses: Azure/setup-kubectl@v3
